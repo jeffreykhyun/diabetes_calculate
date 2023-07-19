@@ -44,7 +44,7 @@ def show_predict_page():
     hypertension_value = 1 if hypertension else 0
     heart_disease = st.checkbox("Do you have heart disease? Check for Yes.")
     heart_disease_value = 1 if hypertension else 0
-    smoking_history = st.selectbox("smoking_history", smoking_history)
+    smoking_history = st.selectbox("Smoking history", smoking_history)
     bmi = st.number_input("Enter your bmi", min_value=0.0)
     HbA1c_level = st.number_input("Enter your HbA1c level", min_value=0.0)
     blood_glucose_level = st.number_input("Enter your blood glucose level", min_value=0.0)
