@@ -38,7 +38,7 @@ def show_predict_page():
         "past_smoker"
     )
 
-    gender = st.selectbox("gender", gender)
+    gender = st.selectbox("Gender", gender)
     age = st.number_input("Enter your age", min_value=0, max_value=120, step=1)
     hypertension = st.checkbox("Do you have hypertension? Check for Yes.")
     hypertension_value = 1 if hypertension else 0
