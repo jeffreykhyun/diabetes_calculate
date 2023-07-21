@@ -23,9 +23,8 @@ HbA1c_level = data['HbA1c_level']
 blood_glucose_level = data['blood_glucose_level']
 
 def show_predict_page():
-    st.title("Diabetes Risk Predictor")
+    st.title("Do you have diabetes?")
 
-    st.write("""### We need some information to predict diabetes """)
 
     gender = (
         "Male",
@@ -54,5 +53,5 @@ def show_predict_page():
         sample = {'gender': gender, 'age': age, 'hypertension': hypertension_value, 'heart_disease': heart_disease_value, 'smoking_history': smoking_history, 'bmi': bmi, 'HbA1c_level': HbA1c_level, 'blood_glucose_level': blood_glucose_level}
         sample_df = pd.DataFrame(sample, index=[0])
         diabetes_risk = model.predict(sample_df)
-        diagnosis = "Positive" if diabetes_risk[0] == 1 else "Negative"
-        st.subheader(f"The diagnosis for diabetes is {diagnosis}")
+        diagnosis = "positive" if diabetes_risk[0] == 1 else "negative"
+        st.subheader(f"Your diagnosis for diabetes is {diagnosis}")
