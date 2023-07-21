@@ -48,7 +48,7 @@ def show_predict_page():
     HbA1c_level = st.number_input("Enter your HbA1c level", min_value=0.0)
     blood_glucose_level = st.number_input("Enter your blood glucose level", min_value=0.0)
 
-    ok = st.button("Calculate Diabetes Risk")
+    ok = st.button("Calculate Diabetes Diagnosis")
     if ok:
         sample = {'gender': gender, 'age': age, 'hypertension': hypertension_value, 'heart_disease': heart_disease_value, 'smoking_history': smoking_history, 'bmi': bmi, 'HbA1c_level': HbA1c_level, 'blood_glucose_level': blood_glucose_level}
         sample_df = pd.DataFrame(sample, index=[0])
