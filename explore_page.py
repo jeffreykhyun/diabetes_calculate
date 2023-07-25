@@ -23,9 +23,13 @@ def load_data():
 df = load_data()
 
 def show_explore_page():
-    fig = px.box(df, x='diabetes', y='age', color='diabetes', points='all', color_discrete_map={'Yes': 'red', 'No': 'green'})
-    fig.update_layout(title='Age and Diabetes', xaxis_title='Diabetes', yaxis_title='Age')
-    st.plotly_chart(fig)
+    st.title("Explore Variables of Diabetes Risk")
+    fig1, ax1 = plt.subplots()
+    sns.boxplot(x='diabetes', y='age', data=df, ax=ax1, palette=['green', 'red'])
+    ax1.set_title('Age and Diabetes')
+    st.write("""#### Age and Diabetes """)
+    st.pyplot(fig1)
+
 
     # Plot 2: Gender and Diabetes
     fig2, ax2 = plt.subplots()
